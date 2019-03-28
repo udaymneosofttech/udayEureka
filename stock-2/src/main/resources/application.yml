@@ -1,0 +1,15 @@
+server:
+  port: 2029
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:2016/eureka
+
+  instance:
+    hostname: localhost
+spring:
+  application:
+    name: stock-service
+

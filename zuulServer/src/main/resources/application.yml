@@ -1,0 +1,31 @@
+
+spring:
+  application:
+    name: zuul-server
+
+server:
+  port: 2018
+  context-path: /
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:2016/eureka
+
+  instance:
+    hostname: localhost
+
+
+zuul:
+  routes:
+    stock-service:
+      path: /stock/**
+
+    auth-service:
+      path: /auth/**
+      sensitive-headers: Cookie,Set-Cookie
+      strip-prefix: false
+
+
